@@ -35,3 +35,25 @@ a { color: var(--accent); text-decoration: none; }
 .stat span { display: block; font-weight: 800; font-size: 1.4rem; }
 .stat small { color: var(--muted); }
 
+.grid.two { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.grid.two .meta { align-self: start; }
+.list { list-style: none; padding: 0; margin: 0; }
+.list li { padding: 6px 0; border-bottom: 1px dashed var(--border); }
+.list li:last-child { border-bottom: 0; }
+
+.chips { display: grid; gap: 18px; }
+.skill-group { background: #0e1320; border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+.skill-group h3 { margin: 0 0 10px; font-size: 1rem; color: var(--muted); font-weight: 600; }
+.chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { background: var(--border); padding: 6px 10px; border-radius: 999px; font-size: .92rem; }
+
+.projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.project { display: block; border: 1px solid var(--border); padding: 16px; border-radius: 14px; background: #0e1320; transition: transform .15s ease, box-shadow .15s ease; }
+.project:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,.35); }
+.project-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.project h3 { margin: 0; font-size: 1.05rem; }
+.lang { font-size: .8rem; color: var(--muted); border: 1px solid var(--border); padding: 3px 8px; border-radius: 999px; }
+.desc { color: var(--muted); min-height: 48px; }
+.project .meta { display: flex; gap: 12px; color: var(--muted); font-size: .85rem; }
+
+.more { margin-top: 12px; }
