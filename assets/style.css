@@ -71,3 +71,15 @@ a { color: var(--accent); text-decoration: none; }
 .site-footer { border-top: 1px solid var(--border); padding: 24px 0; margin-top: 40px; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .footer-inner .links a { margin-left: 12px; }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .grid.two { grid-template-columns: 1fr; }
+  .projects { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 580px) {
+  .projects { grid-template-columns: 1fr; }
+  .menu { display: none; position: absolute; right: 20px; top: 60px; background: var(--card); padding: 12px; border-radius: 12px; border: 1px solid var(--border); flex-direction: column; }
+  .menu.open { display: flex; }
+  .nav-toggle { display: inline-block; background: transparent; color: var(--text); border: 1px solid var(--border); padding: 6px 10px; border-radius: 10px; }
+}
