@@ -57,3 +57,17 @@ a { color: var(--accent); text-decoration: none; }
 .project .meta { display: flex; gap: 12px; color: var(--muted); font-size: .85rem; }
 
 .more { margin-top: 12px; }
+
+.resume-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+.resume-embed { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+
+.contact { display: grid; gap: 12px; }
+.contact input, .contact textarea { width: 100%; background: #0b0e14; color: var(--text); border: 1px solid var(--border); border-radius: 10px; padding: 10px; }
+.contact textarea { min-height: 120px; resize: vertical; }
+.success { color: #9bffd6; }
+.error { color: #ff9b9b; }
+.muted { color: var(--muted); }
+
+.site-footer { border-top: 1px solid var(--border); padding: 24px 0; margin-top: 40px; }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.footer-inner .links a { margin-left: 12px; }
