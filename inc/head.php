@@ -13,13 +13,14 @@
 <body>
 <header class="site-header">
   <nav class="nav container">
-    <a class="brand" href="#top"><?= htmlspecialchars($PROFILE["name"]) ?></a>
+    <a class="brand" href="/portfolio-for-web-laboratory/"><?= htmlspecialchars($PROFILE["name"]) ?></a>
     <button class="nav-toggle" aria-label="Toggle menu">☰</button>
     <ul class="menu">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#resume">Resume</a></li>
+      <li><a href="/portfolio-for-web-laboratory/blog.php">Blog</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><button id="themeToggle" class="theme-toggle" title="Toggle dark mode">🌓</button></li>
     </ul>
