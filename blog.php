@@ -5,25 +5,32 @@
     <p>A collection of my thoughts, tutorials, and project showcases.</p>
   </section>
 
-  <section class="card">
-    <h3><a href="#">First Blog Post</a></h3>
-    <p class="muted">Published on: 2024-07-28</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
-    <a href="#" class="btn">Read more</a>
-  </section>
+  <?php
+  // Fetch blogs from the database
+  $sql = "SELECT id, title, content, publish_date, image_url FROM blogs ORDER BY publish_date DESC";
+  $result = $conn->query($sql);
 
+  if ($result->num_rows > 0):
+    while($row = $result->fetch_assoc()):
+  ?>
+  <article class="blog-card">
+    <?php if (!empty($row["image_url"])): ?>
+      <img src="<?= $row["image_url"] ?>" alt="<?= htmlspecialchars($row["title"]) ?> post image" class="blog-card-img">
+    <?php endif; ?>
+    <div class="blog-card-content">
+      <h3><a href="#"><?= htmlspecialchars($row["title"]) ?></a></h3>
+      <p class="muted">Published on: <?= date("M d, Y", strtotime($row["publish_date"])) ?></p>
+      <p><?= nl2br(htmlspecialchars(substr($row["content"], 0, 150))) ?>...</p>
+      <a href="#" class="btn">Read more</a>
+    </div>
+  </article>
+  <?php
+    endwhile;
+  else:
+  ?>
   <section class="card">
-    <h3><a href="#">Second Blog Post</a></h3>
-    <p class="muted">Published on: 2024-07-25</p>
-    <p>Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.</p>
-    <a href="#" class="btn">Read more</a>
+    <p>No posts found.</p>
   </section>
-
-  <section class="card">
-    <h3><a href="#">Third Blog Post</a></h3>
-    <p class="muted">Published on: 2024-07-22</p>
-    <p>Duis ac turpis. Integer rutrum ante eu lacus. Vestibulum libero nisl, porta vel, scelerisque eget, malesuada at, neque. Vivamus eget nibh. Etiam cursus leo vel metus.</p>
-    <a href="#" class="btn">Read more</a>
-  </section>
+  <?php endif; $conn->close(); ?>
 </main>
 <?php include __DIR__ . '/inc/foot.php'; ?>

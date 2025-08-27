@@ -23,7 +23,7 @@
       </div>
     </div>
   </section>
-</main>
+
 <section id="about" class="grid two card">
   <div>
     <h2>About</h2>
@@ -131,5 +131,5 @@
   }
   ?>
 </section>
-
+</main>
 <?php include __DIR__ . '/inc/foot.php'; ?>
