@@ -24,6 +24,44 @@ require_once '../inc/config.php';
 </head>
 <body>
     <?php include 'nav.php'; ?>
-    
+    <main class="dashboard-container">
+        <h1>Manage Blogs</h1>
+        <a href="create.php" class="create-btn">Create New Post</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Publish Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $sql = "SELECT id, title, publish_date FROM blogs ORDER BY publish_date DESC";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0):
+                    while($row = $result->fetch_assoc()):
+                ?>
+                <tr>
+                    <td><?php echo $row['id']; ?></td>
+                    <td><?php echo htmlspecialchars($row['title']); ?></td>
+                    <td><?php echo date("M d, Y", strtotime($row['publish_date'])); ?></td>
+                    <td class="actions">
+                        <a href="edit.php?id=<?php echo $row['id']; ?>" class="edit">Edit</a>
+                        <a href="actions.php?action=delete&id=<?php echo $row['id']; ?>" class="delete" onclick="return confirm('Are you sure you want to delete this post?');">Delete</a>
+                    </td>
+                </tr>
+                <?php
+                    endwhile;
+                else:
+                ?>
+                <tr>
+                    <td colspan="4" style="text-align:center;">No posts found.</td>
+                </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
+    </main>
 </body>
 </html>
