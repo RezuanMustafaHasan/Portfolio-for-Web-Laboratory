@@ -73,8 +73,18 @@
 <section id="projects" class="card">
   <h2>Projects</h2>
   <div class="projects">
-    <!-- <?//php foreach ($repos as $r): ?> -->
-    <?php foreach ($PROJECT_FALLBACKS as $r): ?>
+    <?php
+    $sql_projects = "SELECT * FROM projects ORDER BY updated_at DESC";
+    $result_projects = $conn->query($sql_projects);
+    $projects = [];
+    if ($result_projects->num_rows > 0) {
+      while($row = $result_projects->fetch_assoc()) {
+        $projects[] = $row;
+      }
+    }
+
+    foreach ($projects as $r):
+    ?>
       <a class="project" href="<?= htmlspecialchars($r["html_url"]) ?>" target="_blank" rel="noopener">
         <div class="project-head">
           <h3><?= htmlspecialchars($r["name"]) ?></h3>

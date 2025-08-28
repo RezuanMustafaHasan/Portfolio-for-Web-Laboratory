@@ -14,44 +14,6 @@ $PROFILE = [
 ];
 
 
-
-
-// ---------- Featured Projects (fallback when GitHub API is unavailable) ----------
-$PROJECT_FALLBACKS = [
-  [
-    "name" => "Airbnb Clone (MERN)",
-    "html_url" => "https://github.com/{$PROFILE["github_user"]}",
-    "description" => "Backend‑focused clone with Node, Express, MongoDB and REST APIs.",
-    "language" => "JavaScript",
-    "stargazers_count" => 0,
-    "updated_at" => "2025-01-01T00:00:00Z"
-  ],
-  [
-    "name" => "SME Ecommerce Platform (MERN)",
-    "html_url" => "https://github.com/{$PROFILE["github_user"]}",
-    "description" => "Server‑side features for small business ecommerce; auth, products, orders.",
-    "language" => "JavaScript",
-    "stargazers_count" => 0,
-    "updated_at" => "2025-01-01T00:00:00Z"
-  ],
-  [
-    "name" => "Spotify Landing Page Clone",
-    "html_url" => "https://github.com/{$PROFILE["github_user"]}",
-    "description" => "Pure HTML/CSS UI clone to practice layout and responsiveness.",
-    "language" => "HTML",
-    "stargazers_count" => 0,
-    "updated_at" => "2025-01-01T00:00:00Z"
-  ],
-  [
-    "name" => "Stock Trading Desktop App (JavaFX)",
-    "html_url" => "https://github.com/{$PROFILE["github_user"]}",
-    "description" => "Simulated trading with portfolio view; mock live prices.",
-    "language" => "Java",
-    "stargazers_count" => 0,
-    "updated_at" => "2025-01-01T00:00:00Z"
-  ]
-];
-
 // ---------- Database Config ----------
 $DB_HOST = "localhost";
 $DB_USER = "root";
