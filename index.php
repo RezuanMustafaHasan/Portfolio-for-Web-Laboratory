@@ -44,7 +44,20 @@
 <section id="skills" class="card">
   <h2>Skills</h2>
   <div class="chips">
-    <?php foreach ($SKILLS as $group => $items): ?>
+    <?php
+    // Fetch skills from the database
+    $skills_from_db = [];
+    $sql = "SELECT name, category FROM skills ORDER BY category, id";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+      while($row = $result->fetch_assoc()) {
+        $skills_from_db[$row['category']][] = $row['name'];
+      }
+    }
+
+    foreach ($skills_from_db as $group => $items):
+    ?>
       <div class="skill-group">
         <h3><?= htmlspecialchars($group) ?></h3>
         <div class="chip-row">

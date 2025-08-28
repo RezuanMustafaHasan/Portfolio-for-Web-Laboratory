@@ -14,14 +14,7 @@ $PROFILE = [
 ];
 
 
-// ---------- Skills (edit to taste) ----------
-$SKILLS = [
-  "Languages" => ["C", "C++", "C#", "Java", "Python", "JavaScript"],
-  "Web" => ["HTML", "CSS", "Node.js", "Express.js", "MongoDB", "SQL"],
-  "Tools" => ["Git", "GitHub", "Vercel (basic)", "AWS (beginner)", "Postman"],
-  "Frameworks/Libraries" => ["React (learning)", "Flutter (Android background)"],
-  "Other" => ["OOP", "REST API", "ML basics (scikit-learn, pandas, NumPy, matplotlib)"]
-];
+
 
 // ---------- Featured Projects (fallback when GitHub API is unavailable) ----------
 $PROJECT_FALLBACKS = [
