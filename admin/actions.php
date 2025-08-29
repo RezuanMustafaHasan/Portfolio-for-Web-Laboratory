@@ -37,6 +37,48 @@ switch ($action) {
         }
         header('Location: edit_skills.php');
         exit;
+    case 'add_project':
+        $name = trim($_POST['name'] ?? '');
+        $html_url = trim($_POST['html_url'] ?? '');
+        $description = trim($_POST['description'] ?? '');
+        $language = trim($_POST['language'] ?? '');
+        $stargazers_count = (int)($_POST['stargazers_count'] ?? 0);
+        $updated_at = trim($_POST['updated_at'] ?? '');
+
+        if ($name && $html_url && $updated_at) {
+            $stmt = $conn->prepare("INSERT INTO projects (name, html_url, description, language, stargazers_count, updated_at) VALUES (?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("ssssis", $name, $html_url, $description, $language, $stargazers_count, $updated_at);
+            $stmt->execute();
+        }
+        header('Location: projects.php');
+        exit;
+    case 'update_project':
+        $id = (int)($_POST['id'] ?? 0);
+        $name = trim($_POST['name'] ?? '');
+        $html_url = trim($_POST['html_url'] ?? '');
+        $description = trim($_POST['description'] ?? '');
+        $language = trim($_POST['language'] ?? '');
+        $stargazers_count = (int)($_POST['stargazers_count'] ?? 0);
+        $updated_at = trim($_POST['updated_at'] ?? '');
+
+        if ($id && $name && $html_url && $updated_at) {
+            $stmt = $conn->prepare("UPDATE projects SET name = ?, html_url = ?, description = ?, language = ?, stargazers_count = ?, updated_at = ? WHERE id = ?");
+            $stmt->bind_param("ssssisi", $name, $html_url, $description, $language, $stargazers_count, $updated_at, $id);
+            $stmt->execute();
+        }
+        header('Location: projects.php');
+        exit;
+
+    case 'delete_project':
+        $id = (int)($_GET['id'] ?? 0);
+        if ($id) {
+            $stmt = $conn->prepare("DELETE FROM projects WHERE id = ?");
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+        }
+        header('Location: projects.php');
+        exit;
+
     case 'create':
         $title = trim($_POST['title'] ?? '');
         $content = trim($_POST['content'] ?? '');
