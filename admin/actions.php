@@ -18,6 +18,20 @@ switch ($action) {
         }
         header('Location: index.php');
         exit;
+    case 'update':
+        $id = (int)($_POST['id'] ?? 0);
+        $title = trim($_POST['title'] ?? '');
+        $content = trim($_POST['content'] ?? '');
+        $publish_date = trim($_POST['publish_date'] ?? '');
+        $image_url = trim($_POST['image_url'] ?? '');
+
+        if ($id && $title && $content && $publish_date) {
+            $stmt = $conn->prepare("UPDATE blogs SET title = ?, content = ?, publish_date = ?, image_url = ? WHERE id = ?");
+            $stmt->bind_param("ssssi", $title, $content, $publish_date, $image_url, $id);
+            $stmt->execute();
+        }
+        header('Location: index.php');
+        exit;
 
     default:
         header('Location: index.php');
