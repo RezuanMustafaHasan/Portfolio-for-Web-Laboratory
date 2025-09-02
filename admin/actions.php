@@ -37,6 +37,7 @@ switch ($action) {
         }
         header('Location: edit_skills.php');
         exit;
+
     case 'add_project':
         $name = trim($_POST['name'] ?? '');
         $html_url = trim($_POST['html_url'] ?? '');
@@ -52,6 +53,7 @@ switch ($action) {
         }
         header('Location: projects.php');
         exit;
+
     case 'update_project':
         $id = (int)($_POST['id'] ?? 0);
         $name = trim($_POST['name'] ?? '');
@@ -92,6 +94,7 @@ switch ($action) {
         }
         header('Location: index.php');
         exit;
+    
     case 'update':
         $id = (int)($_POST['id'] ?? 0);
         $title = trim($_POST['title'] ?? '');
@@ -106,9 +109,7 @@ switch ($action) {
         }
         header('Location: index.php');
         exit;
-
     default:
         header('Location: index.php');
         exit;
 }
-?>

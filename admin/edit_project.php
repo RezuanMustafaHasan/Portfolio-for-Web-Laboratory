@@ -40,25 +40,39 @@ if (!$project) {
                 <input type="hidden" name="action" value="update_project">
                 <input type="hidden" name="id" value="<?= $project['id'] ?>">
 
-                <label for="name">Project Name:</label>
-                <input type="text" id="name" name="name" value="<?= htmlspecialchars($project['name']) ?>" required>
+                <div class="form-group">
+                    <label for="name">Project Name:</label>
+                    <input type="text" id="name" name="name" value="<?= htmlspecialchars($project['name']) ?>" required>
+                </div>
 
-                <label for="html_url">Project URL:</label>
-                <input type="text" id="html_url" name="html_url" value="<?= htmlspecialchars($project['html_url']) ?>" required>
+                <div class="form-group">
+                    <label for="html_url">Project URL:</label>
+                    <input type="text" id="html_url" name="html_url" value="<?= htmlspecialchars($project['html_url']) ?>" required>
+                </div>
 
-                <label for="description">Description:</label>
-                <textarea id="description" name="description" rows="4"><?= htmlspecialchars($project['description']) ?></textarea>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" rows="4"><?= htmlspecialchars($project['description']) ?></textarea>
+                </div>
 
-                <label for="language">Language:</label>
-                <input type="text" id="language" name="language" value="<?= htmlspecialchars($project['language']) ?>">
+                <div class="form-group">
+                    <label for="language">Language:</label>
+                    <input type="text" id="language" name="language" value="<?= htmlspecialchars($project['language']) ?>">
+                </div>
 
-                <label for="stargazers_count">Star Count:</label>
-                <input type="number" id="stargazers_count" name="stargazers_count" value="<?= (int)$project['stargazers_count'] ?>">
+                <div class="form-group">
+                    <label for="stargazers_count">Star Count:</label>
+                    <input type="number" id="stargazers_count" name="stargazers_count" value="<?= (int)$project['stargazers_count'] ?>">
+                </div>
 
-                <label for="updated_at">Last Updated:</label>
-                <input type="datetime-local" id="updated_at" name="updated_at" value="<?= date('Y-m-d\TH:i', strtotime($project['updated_at'])) ?>" required>
+                <div class="form-group">
+                    <label for="updated_at">Last Updated:</label>
+                    <input type="datetime-local" id="updated_at" name="updated_at" value="<?= date('Y-m-d\TH:i', strtotime($project['updated_at'])) ?>" required>
+                </div>
 
-                <button type="submit" class="btn">Update Project</button>
+                <div class="form-group">
+                    <button type="submit" class="btn">Update Project</button>
+                </div>
             </form>
         </section>
     </main>

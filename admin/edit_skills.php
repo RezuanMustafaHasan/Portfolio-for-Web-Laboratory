@@ -32,11 +32,20 @@ if ($result->num_rows > 0) {
         <h2>Add New Skill</h2>
         <form action="actions.php" method="post">
             <input type="hidden" name="action" value="add_skill">
-            <label for="name">Skill Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="category">Category:</label>
-            <input type="text" id="category" name="category" required>
-            <button type="submit" class="btn">Add Skill</button>
+
+            <div class="form-group">
+                <label for="name">Skill Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <input type="text" id="category" name="category" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn">Add Skill</button>
+            </div>
         </form>
     </section>
 
@@ -72,7 +81,5 @@ if ($result->num_rows > 0) {
         </table>
     </section>
 </main>
-</div> <!--.admin-content-->
-</div> <!--.admin-container-->
 </body>
 </html>

@@ -21,25 +21,39 @@ require_once '../inc/config.php';
             <form action="actions.php" method="post">
                 <input type="hidden" name="action" value="add_project">
 
-                <label for="name">Project Name:</label>
-                <input type="text" id="name" name="name" required>
+                <div class="form-group">
+                    <label for="name">Project Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
 
-                <label for="html_url">Project URL:</label>
-                <input type="text" id="html_url" name="html_url" required>
+                <div class="form-group">
+                    <label for="html_url">Project URL:</label>
+                    <input type="text" id="html_url" name="html_url" required>
+                </div>
 
-                <label for="description">Description:</label>
-                <textarea id="description" name="description" rows="4"></textarea>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" rows="4"></textarea>
+                </div>
 
-                <label for="language">Language:</label>
-                <input type="text" id="language" name="language">
+                <div class="form-group">
+                    <label for="language">Language:</label>
+                    <input type="text" id="language" name="language">
+                </div>
 
-                <label for="stargazers_count">Star Count:</label>
-                <input type="number" id="stargazers_count" name="stargazers_count" value="0">
+                <div class="form-group">
+                    <label for="stargazers_count">Star Count:</label>
+                    <input type="number" id="stargazers_count" name="stargazers_count" value="0">
+                </div>
 
-                <label for="updated_at">Last Updated:</label>
-                <input type="datetime-local" id="updated_at" name="updated_at" required>
+                <div class="form-group">
+                    <label for="updated_at">Last Updated:</label>
+                    <input type="datetime-local" id="updated_at" name="updated_at" required>
+                </div>
 
-                <button type="submit" class="btn">Add Project</button>
+                <div class="form-group">
+                    <button type="submit" class="btn">Add Project</button>
+                </div>
             </form>
         </section>
     </main>

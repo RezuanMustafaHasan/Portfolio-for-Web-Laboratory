@@ -4,7 +4,7 @@
         <ul class="nav-menu">
             <li><a href="index.php">Manage Blogs</a></li>
             <li><a href="edit_skills.php">Edit Skills</a></li>
-            <li><a href="edit_projects.php">Edit Projects</a></li>
+            <li><a href="projects.php">Manage Projects</a></li>
         </ul>
     </div>
     <div class="nav-right">

@@ -8,11 +8,6 @@ require_once 'auth_check.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create New Post</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        body { display: block; }
-        .form-container { max-width: 800px; margin: 30px auto; padding: 30px; background: var(--card); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        textarea { min-height: 250px; resize: vertical; }
-    </style>
 </head>
 <body>
     <?php include 'nav.php'; ?>
@@ -38,7 +33,7 @@ require_once 'auth_check.php';
             </div>
             <div class="form-group">
                 <button type="submit" class="btn">Create Post</button>
-                <a href="index.php" style="display:inline-block; margin-left: 10px; text-align:center;">Cancel</a>
+                <a href="index.php" class="btn">Cancel</a>
             </div>
         </form>
     </main>

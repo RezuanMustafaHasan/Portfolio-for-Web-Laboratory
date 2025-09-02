@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
             <h1>Manage Projects</h1>
         </div>
 
-        <section class="card">
+        <section class="card action-bar">
             <a href="add_project.php" class="btn">Add New Project</a>
         </section>
 
