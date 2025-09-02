@@ -109,6 +109,17 @@ switch ($action) {
         }
         header('Location: index.php');
         exit;
+
+    case 'delete':
+        // Delete a blog post by ID (posted from admin/index.php)
+        $id = (int)($_POST['id'] ?? 0);
+        if ($id) {
+            $stmt = $conn->prepare("DELETE FROM blogs WHERE id = ?");
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+        }
+        header('Location: index.php');
+        exit;
     default:
         header('Location: index.php');
         exit;

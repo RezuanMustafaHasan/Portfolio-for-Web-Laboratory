@@ -49,7 +49,11 @@ require_once '../inc/config.php';
                     <td><?php echo date("M d, Y", strtotime($row['publish_date'])); ?></td>
                     <td class="actions">
                         <a href="edit.php?id=<?php echo $row['id']; ?>" class="edit">Edit</a>
-                        <a href="actions.php?action=delete&id=<?php echo $row['id']; ?>" class="delete" onclick="return confirm('Are you sure you want to delete this post?');">Delete</a>
+                        <form action="actions.php" method="POST" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this post?');">
+                            <input type="hidden" name="action" value="delete">
+                            <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                            <button type="submit" class="delete" style="background:none;border:none;color:var(--error);cursor:pointer;padding:0;">Delete</button>
+                        </form>
                     </td>
                 </tr>
                 <?php
