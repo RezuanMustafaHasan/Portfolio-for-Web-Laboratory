@@ -2,25 +2,30 @@
 <?php include __DIR__ . '/inc/head.php'; ?>
 <main id="top" class="container">
   <section class="hero card">
-    <div class="hero-text">
-      <h1><?= htmlspecialchars($PROFILE["name"]) ?></h1>
-      <p class="role"><?= htmlspecialchars($PROFILE["role"]) ?></p>
-      <p class="tagline"><?= htmlspecialchars($PROFILE["tagline"]) ?></p>
-      <div class="cta">
-        <a class="btn primary" href="#projects">View Projects</a>
-        <a class="btn" href="<?= htmlspecialchars($PROFILE["github_url"]) ?>" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="<?= htmlspecialchars($PROFILE["linkedin_url"]) ?>" target="_blank" rel="noopener">LinkedIn</a>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1><?= htmlspecialchars($PROFILE["name"]) ?></h1>
+        <p class="role"><?= htmlspecialchars($PROFILE["role"]) ?></p>
+        <p class="tagline"><?= htmlspecialchars($PROFILE["tagline"]) ?></p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn" href="<?= htmlspecialchars($PROFILE["github_url"]) ?>" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="<?= htmlspecialchars($PROFILE["linkedin_url"]) ?>" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <div class="stats-container">
+          <div class="stat">
+            <span>400+</span>
+            <small>Algorithm problems solved</small>
+          </div>
+          <div class="stat">
+            <span>3.42</span>
+            <small>CGPA</small>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="hero-aside">
-      <div class="stat">
-        <span>400+</span>
-        <small>Algorithm problems solved</small>
-      </div>
-      <div class="stat">
-        <span>3.42</span>
-        <small>CGPA</small>
-      </div>
+    <div class="hero-image">
+      <img src="image.jpg" alt="Profile Picture" class="circular-image">
     </div>
   </section>
 
@@ -134,25 +139,7 @@
       <textarea required name="message" placeholder="How can I help?"></textarea>
     </label>
     <button class="btn primary">Send</button>
-    <p class="muted">This form uses PHP <code>mail()</code>. Configure SMTP or replace with a service like Formspree if needed.</p>
-  </form>
-  <?php
-  // Minimal mail handler (optional; may require server SMTP setup)
-  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $n = trim($_POST['name'] ?? '');
-    $e = trim($_POST['email'] ?? '');
-    $m = trim($_POST['message'] ?? '');
-    if ($n && $e && $m) {
-      $to = $PROFILE['email'];
-      $subject = "Portfolio contact from {$n}";
-      $headers = "From: {$n} <{$e}>\r\nReply-To: {$e}\r\n";
-      @mail($to, $subject, $m, $headers);
-      echo '<p class="success">Thanks! Your message was sent (if mail is configured).</p>';
-    } else {
-      echo '<p class="error">Please fill in all fields.</p>';
-    }
-  }
-  ?>
+    </form>
 </section>
 </main>
 <?php include __DIR__ . '/inc/foot.php'; ?>
